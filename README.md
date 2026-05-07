@@ -1,8 +1,8 @@
 # 222 Levels
 
-222 Levels is an in-progress Flutter mobile game built with Firebase. The game is designed around a 222-level progression system divided into multiple gameplay sections, where each section introduces different mechanics, difficulty models, and progression rules.
+222 Levels is an in-progress Flutter mobile game built around one objective: clear all 222 levels before anyone else.
 
-The project focuses on scalable mobile architecture, competitive progression design, authentication systems, cloud-backed state management, and ad-supported monetization.
+The game uses Firebase for cloud-backed progress, Hive for local gameplay state, and AdMob interstitials as part of the failure loop. Each section introduces different mechanics, difficulty rules, and penalties, making progression feel competitive rather than passive.
 
 ---
 
@@ -13,7 +13,7 @@ The project focuses on scalable mobile architecture, competitive progression des
 - **Backend:** Firebase / Cloud Firestore
 - **Authentication:** Firebase Authentication
 - **OAuth Providers:** Google, Apple, X
-- **Monetization:** Google Mobile Ads SDK (AdMob)
+- **Monetization:** Google Mobile Ads SDK / AdMob
 - **Local Storage:** Hive
 - **Platform Targets:** iOS / Android
 
@@ -21,76 +21,33 @@ The project focuses on scalable mobile architecture, competitive progression des
 
 ## Features
 
-### Authentication
-
-- Firebase Authentication integration
-- Google Sign-In support
-- Apple Sign-In support
-- X authentication support
-- Persistent account-based progression tracking
-
-### Backend Infrastructure
-
-- Firebase-powered backend architecture
-- NoSQL cloud database integration
-- Remote player data synchronization
-- Scalable client-server communication design
-
-### Local Storage
-
-- Hive local database integration
-- Cached gameplay state management
-- Persistent progress storage
-- Offline-friendly state tracking
-
-### Monetization
-
-- AdMob interstitial advertisement integration
-- Failure-state advertisement triggering
-- Ad-supported progression model
-- Mobile-focused monetization architecture
+- Firebase authentication with Google, Apple, and X sign-in
+- Cloud-backed player progress using Firebase / Cloud Firestore
+- Local gameplay state storage with Hive
+- AdMob interstitial ads integrated into failure states
+- Section-based progression across 222 planned levels
+- Competitive completion-focused gameplay loop
 
 ---
 
 ## Gameplay Structure
 
-The game is planned around 222 total levels divided across 25+ sections, with each section containing approximately 5–10 levels.
+The game is planned around 222 total levels divided into 25+ sections. Each section contains approximately 5–10 levels and introduces a different game type, mechanic, or penalty model.
 
-Each section introduces a different gameplay system or challenge type. Players must complete the active section before progressing further into the game.
+Players must complete the active section before progressing. Some sections may use limited lives, section resets, locked checkpoints, or other failure penalties.
 
-Progression rules vary between sections and may include:
-
-- Limited-life challenge systems
-- Full section resets on failure
-- Increasing difficulty escalation
-- Locked progression checkpoints
-- Re-clearing previous sections after moving backward
-
-The progression model is intentionally designed to create long-term difficulty scaling and competitive pressure throughout the game experience.
+Moving backward to a previous section requires the player to complete that section again before returning to later levels.
 
 ---
 
-## Competitive Gameplay Design
+## Monetization Design
 
-222 Levels is designed around competitive completion incentives, where players attempt to finish the full game progression before others.
+Interstitial ads are integrated into failure states as part of the gameplay loop.
 
-Failure states are intentionally designed to carry consequences. Interstitial advertisements, progression resets, and limited-life systems are integrated directly into the gameplay loop to increase tension and discourage careless progression.
-
-Rather than functioning as detached monetization, advertisements are incorporated as part of the overall challenge structure and risk-reward progression model.
+Because the game is designed around competitive completion, ads function as both monetization and a progression deterrent. Failure costs time, which matters when players are competing to finish first.
 
 ---
 
-## Project Goals
+## Status
 
-- Build a scalable full-stack mobile game architecture
-- Design modular gameplay sections with distinct mechanics
-- Integrate authentication and persistent cloud progression
-- Develop a competitive progression system with long-term retention
-- Implement monetization systems directly into gameplay flow
-- Support large-scale concurrent mobile users through Firebase infrastructure
-
----
-
-## Current Status
-
-The project is currently in active development. Core systems including authentication, backend integration, local storage, gameplay progression logic, and monetization infrastructure are actively being implemented and refined.
+This project is currently in active development. Core systems for authentication, Firebase integration, local storage, progression logic, and ad monetization are being implemented and refined.
